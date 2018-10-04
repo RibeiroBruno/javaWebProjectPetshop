@@ -19,19 +19,20 @@ function createRaca(tagOption) {
     const tag = document.getElementById('inputRaca')
     let result = '<option selected="true" disabled="disabled">Escolha uma Raça</option>'
     if (option === 'cachorro') {
-        result += racaCeas.map(raca => '<option value="' + raca + '">' + raca + '</option>').join('\n')
+        result += racaCeas.map(raca => '<option name="raca" value="' + raca + '">' + raca + '</option>').join('\n')
     }
     if (option === 'gato') {
-        result += racaGatos.map(raca => '<option value="' + raca + '">' + raca + '</option>').join('\n')
+        result += racaGatos.map(raca => '<option name="raca" value="' + raca + '">' + raca + '</option>').join('\n')
     }
     if (option === 'passaro') {
-        result += racaPassaros.map(raca => '<option value="' + raca + '">' + raca + '</option>').join('\n')
+        result += racaPassaros.map(raca => '<option name="raca" value="' + raca + '">' + raca + '</option>').join('\n')
     }
     if (option === 'peixe') {
-        result += racaPeixes.map(raca => '<option value="' + raca + '">' + raca + '</option>').join('\n')
+        result += racaPeixes.map(raca => '<option name="raca" value="' + raca + '">' + raca + '</option>').join('\n')
     }
     if (option === 'avestruz') {
-        result += recaAvestruz.map(raca => '<option value="' + raca + '">' + raca + '</option>').join('\n')
+        result += recaAvestruz.map(raca => '<option name="raca" value="' + raca + '">' + raca + '</option>').join('\n')
     }
+    console.log(result)
     tag.innerHTML = result
 }

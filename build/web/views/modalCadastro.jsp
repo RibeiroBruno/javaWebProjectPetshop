@@ -8,10 +8,10 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="cadastroPet" method="POST">
+            <form action="cadastro" method="POST">
                 <div class="form-group">
                     <label for="inputName">Nome do dono: </label>
-                    <input type="text" class="form-control" id="inputName" name="petName" aria-describedby="ajudaName"
+                    <input type="text" class="form-control" id="inputName" name="nomeDono" aria-describedby="ajudaName"
                         placeholder="Pedro Henrique" required>
                     <small id="ajudaName" class="form-text text-muted">Digite o nome do seu Dono do Pet</small>
                 </div>
@@ -23,33 +23,33 @@
                 </div>
                 <div class="form-group">
                     <label for="inputCategoria">Tipo de Animal</label>
-                    <select class="form-control" id="inputCategoria" onchange="createRaca(this)" required>
-                        <option name="petCategoria" selected="true" disabled="disabled">Escolha uma Opção</option>
-                        <option name="petCategoria" value="cachorro">cachorro</option>
-                        <option name="petCategoria" value="gato">gato</option>
-                        <option name="petCategoria" value="passaro">passaro</option>
-                        <option name="petCategoria" value="peixe">peixe</option>
-                        <option name="petCategoria" value="avestruz">avestruz</option>
+                    <select class="form-control" id="inputCategoria" name="petCategoria" onchange="createRaca(this)" required>
+                        <option selected="true" disabled="disabled">Escolha uma Opção</option>
+                        <option value="cachorro">cachorro</option>
+                        <option value="gato">gato</option>
+                        <option value="passaro">passaro</option>
+                        <option value="peixe">peixe</option>
+                        <option value="avestruz">avestruz</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="inputRaca">Raça</label>
-                    <select class="form-control" id="inputRaca" required>
+                    <select class="form-control" id="inputRaca" name="raca" required>
 
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="inputCor">Cor</label>
-                    <select class="form-control" id="inputCor" required>
-                        <option name="petCor" selected="true" disabled="disabled">Escolha uma Opção</option>
-                        <option name="petCor" value="branco">branco</option>
-                        <option name="petCor" value="preto">preto</option>
-                        <option name="petCor" value="marrom">marrom</option>
-                        <option name="petCor" value="malhado">malhado</option>
-                        <option name="petCor" value="amarelo">amarelo</option>
-                        <option name="petCor" value="verde">verde</option>
-                        <option name="petCor" value="rajado">rajado</option>
-                        <option name="petCor" value="outro">outro</option>
+                    <select class="form-control" id="inputCor" name="petCor" required>
+                        <option selected="true" disabled="disabled">Escolha uma Opção</option>
+                        <option value="branco">branco</option>
+                        <option value="preto">preto</option>
+                        <option value="marrom">marrom</option>
+                        <option value="malhado">malhado</option>
+                        <option value="amarelo">amarelo</option>
+                        <option value="verde">verde</option>
+                        <option value="rajado">rajado</option>
+                        <option value="outro">outro</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -66,15 +66,15 @@
                 </div>
                 <div class="form-group form-check">
                     <label class="btn btn-secondary active">
-                        <input type="radio" name="sexo" id="option1" autocomplete="off" checked> Macho
+                        <input type="radio" name="sexo" value="macho" id="option1" autocomplete="off" checked> Macho
                     </label>
                     <label class="btn btn-secondary">
-                        <input type="radio" name="sexo" id="option2" autocomplete="off"> Femea
+                        <input type="radio" name="sexo" value="femea" id="option2" autocomplete="off"> Femea
                     </label>
                 </div>
                 <div class="btn-group-toggle" data-toggle="buttons" style="margin-bottom: 10%">
                     <label class="btn btn-outline-warning active">
-                        <input type="checkbox" name="adocao" checked autocomplete="off"> Adoção
+                        <input type="radio" value="sim" name="adocao"> Adoção
                     </label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
