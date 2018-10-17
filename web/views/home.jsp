@@ -80,12 +80,18 @@
     </div>
     <div id="index2c" class="row" style="padding: 10%">
         <div class="d-flex justify-content-center">
-            <core:forEach var="square" begin="0" end="2">
+            <core:forEach var="pet" items="${pets}">
                 <div class="card" style="width: 18rem; margin: 2%">
                     <img class="card-img-top" src="img/labrador-com-cara-de-bobo.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Seu Pet Feliz</h5>
-                        <p class="card-text text-center">Maior variedade, com ambiente agradável.</p>
+                        <h5 class="card-title text-center">${pet.getPetName()}</h5>
+                        <p class="card-text text-center">Tipo: ${pet.getPetCategoria()}</p>
+                        <p class="card-text text-center">Nome do Dono: ${pet.getNomeDono()}</p>
+                        <p class="card-text text-center">Criado em: ${pet.getCreatedAt()}</p>
+                        <p class="card-text text-center">Gênero: ${pet.getSexo()}</p>
+                        <p class="card-text text-center">Data Nascimento: ${pet.getPetDtNasc()}</p>
+                        <p class="card-text text-center">Cor: ${pet.getPetCor()}</p>
+                        <p class="card-text text-center">setRaca: ${pet.getRaca()}</p>
                         <div class="d-flex justify-content-center">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCadastro">Adote
                                 este Pet</button>

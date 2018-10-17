@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class Mysql {
     private final String driver = "com.mysql.jdbc.Driver";
-    private final String endpoint = "javaWebProject.ckfhxxt08ybd.sa-east-1.rds.amazonaws.com";
+    private final String endpoint = "javawebproject.ckfhxxt08ybd.sa-east-1.rds.amazonaws.com";
     private final String port = "3306";
     private final String database = "javaWebProjectForms";
     private final String user = "brunoribeiro";

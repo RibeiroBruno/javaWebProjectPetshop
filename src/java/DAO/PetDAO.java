@@ -7,9 +7,11 @@ package DAO;
 
 import Connection.Mysql;
 import Model.Pet;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 
@@ -20,6 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 public class PetDAO {
     private final Pet pet = new Pet();
     private final Mysql mysql = new Mysql();
+    private ArrayList pets = new ArrayList();
     
     public void generateParams(HttpServletRequest request) {
         UUID uuid = UUID.randomUUID();
@@ -130,6 +133,49 @@ public class PetDAO {
             return false;
         }
     }
+    
+    public boolean getData() {
+        boolean result = this.getMysql().conectar();
+        if(!result) return false;
+        
+        String sql = "SELECT `nomeDono`, `petName`, `petCategoria`, `raca`, "
+                + "`petCor`, `petDtNasc`, `sexo`, `petPeso`, `adocao` "
+                + "FROM `javaWebProjectPetshop`.`pet` WHERE "
+                + "`deleted` = false ORDER BY updatedAt LIMIT 4";
+        
+        try {
+            if (!this.getMysql().createStatement(sql)) return false;
+            ResultSet resultado = this.getMysql()
+                    .getSt()
+                    .executeQuery();
+            
+            while(resultado.next()) {
+                Pet pet = new Pet();
+                pet.setNomeDono(resultado.getString("nomeDono"));
+                pet.setPetName(resultado.getString("petName"));
+                pet.setPetCategoria(resultado.getString("petCategoria"));
+                pet.setRaca(resultado.getString("raca"));
+                pet.setPetCor(resultado.getString("petCor"));
+                pet.setPetDtNasc(resultado.getString("petDtNasc"));
+                pet.setSexo(resultado.getString("sexo"));
+                pet.setAdocao(resultado.getBoolean("adocao"));
+                this.getPets().add(pet);
+            }
+            
+            this.getMysql()
+                .desconectar();
+            return true;
+        } catch(SQLException ex) {
+            int CodErro = ex.getErrorCode();
+            String msgErro = ex.getMessage();
+            System.out.println(msgErro);
+            return false;
+        } catch (Exception ex) {
+            String msgErro = ex.getMessage();
+            System.out.println(msgErro);
+            return false;
+        }
+    }
 
     /**
      * @return the pet
@@ -143,5 +189,12 @@ public class PetDAO {
      */
     public Mysql getMysql() {
         return mysql;
+    }
+
+    /**
+     * @return the pets
+     */
+    public ArrayList getPets() {
+        return pets;
     }
 }
