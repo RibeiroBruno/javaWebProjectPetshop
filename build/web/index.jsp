@@ -32,6 +32,9 @@
         #index2 {
             background-image: url("img/background2.jpg");
         }
+        #index3 {
+            background-image: url("img/background3.jpg");
+        }
     </style>
 </head>
 

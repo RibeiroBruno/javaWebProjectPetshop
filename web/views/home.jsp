@@ -49,7 +49,7 @@
                 Seu Pet</button>
         </div>
     </div>
-    <div id="index2b" class="row" style="margin-left: 10px">
+    <div id="index2b" class="row" style="margin-left: 10px; margin-top: 10%; margin-bottom: 10%">
         <div class="d-flex justify-content-center">
             <div class="col-sm-6" style="background-color: rgba(0, 0, 0, 0.5)">
                 <h2 class="text-white text-center">
@@ -78,22 +78,31 @@
             </div>
         </div>
     </div>
-    <div id="index2c" class="row" style="padding: 10%">
+</div>
+<div class="parallax" id="index3" style="padding:5%">
+    <div class="row">
         <div class="d-flex justify-content-center">
             <core:forEach var="pet" items="${pets}">
                 <div class="card" style="width: 18rem; margin: 2%">
                     <img class="card-img-top" src="img/labrador-com-cara-de-bobo.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title text-center">${pet.getPetName()}</h5>
-                        <p class="card-text text-center">Tipo: ${pet.getPetCategoria()}</p>
-                        <p class="card-text text-center">Nome do Dono: ${pet.getNomeDono()}</p>
-                        <p class="card-text text-center">Criado em: ${pet.getCreatedAt()}</p>
-                        <p class="card-text text-center">Gênero: ${pet.getSexo()}</p>
+                        <p class="card-text text-center" id="petId${pets.indexOf(pet)}" value="${pet.getPetId()}"
+                            hidden></p>
+                        <h5 class="card-title text-center" id="petName${pets.indexOf(pet)}" value="${pet.getPetName()}">${pet.getPetName()}</h5>
+                        <p class="card-text text-center" id="PetCategoria${pets.indexOf(pet)}" value="${pet.getPetCategoria()}">Tipo:
+                            ${pet.getPetCategoria()}</p>
+                        <p class="card-text text-center" id="NomeDono${pets.indexOf(pet)}" value="${pet.getNomeDono()}">Nome
+                            do Dono:
+                            ${pet.getNomeDono()}</p>
+                        <p class="card-text text-center" id="Sexo${pets.indexOf(pet)}" value="${pet.getSexo()}">Gênero:
+                            ${pet.getSexo()}</p>
                         <p class="card-text text-center">Data Nascimento: ${pet.getPetDtNasc()}</p>
                         <p class="card-text text-center">Cor: ${pet.getPetCor()}</p>
                         <p class="card-text text-center">setRaca: ${pet.getRaca()}</p>
+                        <p hidden id="indexPet" value="${pets.indexOf(pet)}"></p>
                         <div class="d-flex justify-content-center">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCadastro">Adote
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAdocao"
+                                onClick="sendDataToForm('${pets.indexOf(pet)}')">Adote
                                 este Pet</button>
                         </div>
                     </div>
@@ -102,4 +111,5 @@
         </div>
     </div>
     <%@include file="modalCadastro.jsp" %>
+    <%@include file="modalUpdate.jsp" %>
 </div>

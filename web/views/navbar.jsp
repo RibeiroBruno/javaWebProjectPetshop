@@ -15,11 +15,12 @@
         <a class="nav-link" href="#index2b">Quem Somos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#index2x">Cadastrar</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="#index2">Cadastrar Pet</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#index3">Para adoção</a>
+      </li>
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">

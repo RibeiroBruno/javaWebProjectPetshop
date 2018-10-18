@@ -36,3 +36,16 @@ function createRaca(tagOption) {
     console.log(result)
     tag.innerHTML = result
 }
+
+function sendDataToForm(index) {
+    const indexPet = document.getElementById('petId' + index).getAttribute('value')
+    const adocaoNome = document.getElementById('petName' + index).getAttribute('value')
+    const adocaoTipo = document.getElementById('PetCategoria' + index).getAttribute('value')
+    const adocaoDono = document.getElementById('NomeDono' + index).getAttribute('value')
+    const petGenero = document.getElementById('Sexo' + index).getAttribute('value')
+    document.getElementById('petId').textContent = indexPet
+    document.getElementById('adocaoNome').textContent = 'Nome: ' + adocaoNome
+    document.getElementById('adocaoTipo').textContent = 'Tipo: ' + adocaoTipo
+    document.getElementById('adocaoDono').textContent = 'Dono: ' + adocaoDono
+    document.getElementById('adocaoGenero').textContent = 'Sexo: ' + petGenero
+}

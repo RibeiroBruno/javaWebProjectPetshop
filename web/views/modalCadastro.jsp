@@ -54,8 +54,8 @@
                 </div>
                 <div class="form-group">
                     <label for="inputPeso">Peso do pet: </label>
-                    <input type="number" class="form-control" id="inputPeso" name="petPeso" aria-describedby="ajudaName"
-                        placeholder="Pedro Henrique" required>
+                    <input type="number" class="form-control" id="inputPeso" step="0.01" name="petPeso" aria-describedby="ajudaName"
+                        placeholder="5.4" required>
                     <small id="ajudaPeso" class="form-text text-muted">Digite peso em Kg do seu Pet</small>
                 </div>
                 <div class="form-group">
